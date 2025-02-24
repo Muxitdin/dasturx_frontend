@@ -33,10 +33,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-black px-6 py-4 space-y-4 border-t border-gray-700">
-          <Link href="/about" className="block hover:text-green-400">About</Link>
-          <Link href="/courses" className="block hover:text-green-400">Courses</Link>
-          <Link href="/testimonials" className="block hover:text-green-400">Testimonials</Link>
-          <Link href="/contact" className="block hover:text-green-400">Contact</Link>
+          <Link to="/about" className="block hover:text-green-400">About</Link>
+          <Link to="/courses" className="block hover:text-green-400">Courses</Link>
+          <Link to="/testimonials" className="block hover:text-green-400">Testimonials</Link>
+          <Link to="/contact" className="block hover:text-green-400">Contact</Link>
           <button className="w-full bg-green-500 px-4 py-2 rounded-lg text-black font-semibold hover:bg-green-600">
             Enroll Now
           </button>
