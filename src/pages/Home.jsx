@@ -1,155 +1,186 @@
 import React from "react";
-import { Laptop, MessageCircleQuestion, BookOpenCheck, Users, PenTool, CodeXml, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { FaArrowRight, FaCode, FaLaptopCode, FaServer, FaMobileAlt } from "react-icons/fa";
+
+const featuredCourses = [
+    {
+        title: "Front-end Development",
+        description: "Master HTML, CSS, JavaScript and modern frameworks like React",
+        icon: <FaLaptopCode className="text-green-500 text-4xl" />,
+        level: "Beginner to Advanced",
+    },
+    {
+        title: "Back-end Development",
+        description: "Build robust server-side applications with Java/Node.js and databases",
+        icon: <FaServer className="text-green-500 text-4xl" />,
+        level: "Intermediate",
+    },
+    {
+        title: "UI/UX Design",
+        description: "Create visually stunning and user-friendly interfaces",
+        icon: <FaMobileAlt className="text-green-500 text-4xl" />,
+        level: "Beginner to Advanced",
+    },
+];
+
+const testimonials = [
+    {
+        name: "Sarah Johnson",
+        role: "Junior Developer",
+        image: "https://via.placeholder.com/150",
+        text: "The courses at DasturX completely transformed my career path. I went from knowing nothing about coding to landing my first developer job in just 6 months.",
+    },
+    {
+        name: "Alex Chen",
+        role: "Full-stack Engineer",
+        image: "https://via.placeholder.com/150",
+        text: "The mentorship I received at DasturX was exceptional. The instructors truly care about your growth and provide real-world projects that prepare you for the industry.",
+    },
+];
 
 const Home = () => {
-    const [openFAQ, setOpenFAQ] = useState(null);
-    
-    const faqs = [
-        {
-            question: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatum.",
-        },
-        {
-            question: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.?",
-            answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatum.",
-        },
-        {
-            question: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.?",
-            answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptatum.",
-        },
-    ];
-
     return (
-        <div className="relative wrapper min-h-full flex flex-col justify-center items-center">
-            <section className="hero min-h-full min-w-full flex gap-20 flex-col items-center justify-center text-center">
-                <div className="hero_upper flex flex-col items-center justify-center gap-6 mt-40">
-                    <h1 className="text-4xl font-bold font-heading text-green-500">
-                        Empower Your IT Career with DasturX
+        <div className="min-h-screen text-white py-12 px-6 bg-gradient-to-b from-[#121212] to-[#1a1a1a] container mx-auto p-8">
+            {/* Hero Section */}
+            <section className="max-w-6xl mx-auto flex flex-col gap-14 md:flex-row items-center justify-between py-20 relative">
+                <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl"></div>
+                <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0 relative z-10">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+                            Start Your Coding
+                        </span>
+                        <br />
+                        Journey Today
                     </h1>
-                    <p className="text-lg font-text text-white">
-                        Join our community of learners and experts to enhance your skills and achieve your career goals
-                        in the IT industry.
+                    <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Learn in-demand programming skills from industry experts and transform your career with DasturX.
                     </p>
-                    <button className="w-[145px] h-[52px] rounded-full bg-green-500 text-black text-lg font-bold font-text hover:bg-green-500 transition-all duration-300 ease-in-out">
-                        Sign Up Now
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <button className="px-8 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300">
+                            Get Started
+                        </button>
+                        <button className="px-8 py-3 border border-green-500/30 rounded-full font-medium hover:bg-green-500/10 transition-all duration-300">
+                            Explore Courses
+                        </button>
+                    </div>
                 </div>
-                <div className="hero_lower flex flex-col items-center w-full max-w-5xl px-6">
-                    <p className="text-3xl font-bold text-white text-center mb-6">Why Choose DasturX?</p>
-                    <div className="flex flex-wrap justify-center gap-6">
-                        {[
-                            {
-                                icon: Laptop,
-                                title: "Expert Instructors",
-                                text: "Learn from industry leaders with real-world experience.",
-                            },
-                            {
-                                icon: BookOpenCheck,
-                                title: "Comprehensive Courses",
-                                text: "Access a wide range of courses tailored to your skills.",
-                            },
-                            {
-                                icon: MessageCircleQuestion,
-                                title: "Community Support",
-                                text: "Engage with a vibrant community of learners and mentors.",
-                            },
-                        ].map((item, index) => (
-                            <div
-                                key={index}
-                                className="flex flex-col items-center gap-3 bg-[#202020] rounded-2xl h-[220px] w-[260px] p-6 shadow-lg hover:scale-105 transition"
-                            >
-                                <item.icon className="text-green-500 w-12 h-12" />
-                                <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-                                <p className="text-sm text-gray-300">{item.text}</p>
-                            </div>
-                        ))}
+                <div className="hidden md:w-1/2 md:block relative">
+                    <div className="w-full h-80 md:h-96 rounded-2xl bg-[#202020] border border-green-500/10 relative overflow-hidden">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <FaCode className="text-9xl text-green-500/20" />
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#121212] to-transparent h-1/3"></div>
                     </div>
                 </div>
             </section>
-            <section className="w-full max-w-6xl px-6 py-16">
-                <h2 className="text-3xl font-bold text-white text-center mb-6">Popular Courses</h2>
-                <div className="flex flex-wrap justify-center gap-6">
-                    {[
-                        {
-                            title: "Full-Stack Web Development",
-                            icon: CodeXml,
-                            desc: "Master React, Node.js, and databases.",
-                        },
-                        {
-                            title: "UI-UX design",
-                            icon: PenTool,
-                            desc: "Learn Figma, Adobe, and design principles.",
-                        },
-                        {
-                            title: "English for IT",
-                            icon: Users,
-                            desc: "Improve your English for IT and business.",
-                        },
-                    ].map((course, index) => (
+
+            {/* Featured Courses Section */}
+            <section className="max-w-6xl mx-auto md:py-20 pt-0 relative">
+                <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl -z-10"></div>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 mb-4">
+                        Featured Courses
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-8 rounded-full"></div>
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                        Expertly crafted courses to help you master the latest technologies and programming languages.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {featuredCourses.map((course, index) => (
                         <div
                             key={index}
-                            className="flex flex-col items-center gap-3 bg-[#202020] rounded-2xl h-[220px] w-[260px] p-6 shadow-lg hover:scale-105 transition"
+                            className="bg-[#202020] rounded-2xl p-8 shadow-xl hover:shadow-green-500/10 
+                                      hover:translate-y-[-8px] transition-all duration-300 border border-green-500/10"
                         >
-                            <course.icon className="text-green-500 w-12 h-12" />
-                            <h3 className="text-xl font-semibold text-white">{course.title}</h3>
-                            <p className="text-sm text-gray-300">{course.desc}</p>
+                            <div className="mb-6">{course.icon}</div>
+                            <h3 className="text-2xl font-semibold mb-3">{course.title}</h3>
+                            <p className="text-gray-300 mb-4">{course.description}</p>
+                            <span className="inline-block bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm">
+                                {course.level}
+                            </span>
+                            <div className="mt-6">
+                                <a
+                                    href="#"
+                                    className="flex items-center text-green-400 hover:text-green-300 transition-colors"
+                                >
+                                    <span className="mr-2">Learn more</span>
+                                    <FaArrowRight size={14} />
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>
             </section>
-            <section className="w-full max-w-6xl px-6 py-16">
-                <h2 className="text-3xl font-bold text-white text-center mb-6">What Our Students Say</h2>
-                <div className="flex flex-wrap justify-center gap-6">
-                    {[
-                        {
-                            name: "Teshavoy",
-                            text: "lorem ipsum dolor sit amet, consectetur adipiscing elit!",
-                            img: "/alexander-hipp-iEEBWgY_6lA-unsplash.jpg",
-                        },
-                        {
-                            name: "Boltavoy",
-                            text: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                            img: "/alexander-hipp-iEEBWgY_6lA-unsplash.jpg",
-                        },
-                        {
-                            name: "Teshavoy",
-                            text: "lorem ipsum dolor sit amet, consectetur adipiscing elit!",
-                            img: "/alexander-hipp-iEEBWgY_6lA-unsplash.jpg",
-                        },
-                    ].map((testimonial, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#202020] rounded-2xl p-6 shadow-lg w-[300px] text-center hover:scale-105 transition"
-                        >
-                            <img
-                                src={testimonial.img}
-                                className="w-16 h-16 rounded-full mx-auto mb-3"
-                                alt={testimonial.name}
-                            />
-                            <p className="text-gray-300">"{testimonial.text}"</p>
-                            <h4 className="text-green-500 font-bold mt-2">- {testimonial.name}</h4>
-                        </div>
-                    ))}
+
+            {/* Statistics Section */}
+            <section className="max-w-6xl mx-auto py-16">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    <div className="bg-[#202020] rounded-2xl p-8 border border-green-500/10">
+                        <h3 className="text-4xl font-bold text-green-500 mb-2">500+</h3>
+                        <p className="text-gray-300">Students Taught</p>
+                    </div>
+                    <div className="bg-[#202020] rounded-2xl p-8 border border-green-500/10">
+                        <h3 className="text-4xl font-bold text-green-500 mb-2">20+</h3>
+                        <p className="text-gray-300">Expert Instructors</p>
+                    </div>
+                    <div className="bg-[#202020] rounded-2xl p-8 border border-green-500/10">
+                        <h3 className="text-4xl font-bold text-green-500 mb-2">15+</h3>
+                        <p className="text-gray-300">Specialized Courses</p>
+                    </div>
+                    <div className="bg-[#202020] rounded-2xl p-8 border border-green-500/10">
+                        <h3 className="text-4xl font-bold text-green-500 mb-2">95%</h3>
+                        <p className="text-gray-300">Job Placement</p>
+                    </div>
                 </div>
             </section>
-            <section className="w-full max-w-5xl px-6 py-16">
-                <h2 className="text-3xl font-bold text-white text-center mb-6">Frequently Asked Questions</h2>
-                <div className="bg-[#202020] p-8 rounded-lg shadow-lg">
-                    {faqs.map((faq, index) => (
-                        <div key={index} className="mb-4 border-b border-gray-600 pb-3">
-                            <button
-                                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                                className="flex justify-between w-full text-lg text-green-500 font-semibold cursor-pointer"
-                            >
-                                {faq.question}
-                                <ChevronDown
-                                    className={`w-6 h-6 transition-transform ${openFAQ === index ? "rotate-180" : ""}`}
+
+            {/* Testimonials */}
+            <section className="max-w-6xl mx-auto py-20 relative">
+                <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl -z-10"></div>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 mb-4">
+                        Student Success Stories
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-8 rounded-full"></div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {testimonials.map((testimonial, index) => (
+                        <div
+                            key={index}
+                            className="bg-[#202020] rounded-2xl p-8 shadow-xl border border-green-500/10 relative"
+                        >
+                            <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 text-green-500/20 text-7xl font-serif">
+                                "
+                            </div>
+                            <p className="text-gray-300 mb-6 relative z-10">{testimonial.text}</p>
+                            <div className="flex items-center">
+                                <img
+                                    src={testimonial.image}
+                                    alt={testimonial.name}
+                                    className="w-12 h-12 rounded-full mr-4 border border-green-500/30"
                                 />
-                            </button>
-                            {openFAQ === index && <p className="text-gray-300 mt-2">{faq.answer}</p>}
+                                <div>
+                                    <h4 className="font-semibold">{testimonial.name}</h4>
+                                    <p className="text-green-400 text-sm">{testimonial.role}</p>
+                                </div>
+                            </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Сall to action Section */}
+            <section className="max-w-5xl mx-auto text-center py-16 mb-8">
+                <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-3xl p-12 border border-green-500/20">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your journey?</h2>
+                    <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                        Join thousands of students who have transformed their careers with DasturX.
+                    </p>
+                    <button className="px-8 py-4 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 text-lg">
+                        Enroll Now
+                    </button>
                 </div>
             </section>
         </div>
