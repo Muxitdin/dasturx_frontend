@@ -28,11 +28,11 @@ const Contact = () => {
         // Reset form
         setFormData({ name: "", email: "", subject: "", message: "" });
         // Hide success message after 3 seconds
-        setTimeout(() => setIsSubmitted(false), 3000);
+        setTimeout(() => setIsSubmitted(false), 5000);
     };
 
     return (
-        <div className="min-h-screen text-white py-12 px-6 bg-gradient-to-b from-[#121212] to-[#1a1a1a] pt-28">
+        <div className="min-h-screen text-white py-12 px-6 pt-28">
             {/* Hero Section */}
             <section className="max-w-5xl mx-auto text-center mb-16 relative">
                 <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl"></div>
@@ -73,7 +73,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold mb-1">Phone Number</h3>
-                                        <p className="text-gray-300">+998 XX XXX XX XX</p>
+                                        <p className="text-gray-300">+998 90 553 56 79</p>
                                     </div>
                                 </div>
 
@@ -93,8 +93,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold mb-1">Working Hours</h3>
-                                        <p className="text-gray-300">Mon - Fri: 9:00 AM - 6:00 PM</p>
-                                        <p className="text-gray-300">Saturday: 10:00 AM - 4:00 PM</p>
+                                        <p className="text-gray-300">Mon - Fri: 9:00 AM - 9:00 PM</p>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +206,7 @@ const Contact = () => {
                                                 onChange={handleChange}
                                                 required
                                                 className="w-full bg-[#161616] border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-transparent transition-all"
-                                                placeholder="John Doe"
+                                                placeholder="Johnbek"
                                             />
                                         </div>
                                         <div>

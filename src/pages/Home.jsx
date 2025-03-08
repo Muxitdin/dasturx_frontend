@@ -39,7 +39,7 @@ const testimonials = [
 
 const Home = () => {
     return (
-        <div className="min-h-screen text-white py-12 px-6 bg-gradient-to-b from-[#121212] to-[#1a1a1a] container mx-auto p-8">
+        <div className="min-h-screen text-white px-6 mx-auto p-12">
             {/* Hero Section */}
             <section className="max-w-6xl mx-auto flex flex-col gap-14 md:flex-row items-center justify-between py-20 relative">
                 <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl"></div>

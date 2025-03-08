@@ -38,7 +38,7 @@ const teachers = [
 
 const About = () => {
     return (
-        <div className="min-h-screen text-white py-12 px-6 bg-gradient-to-b from-[#121212] to-[#1a1a1a]">
+        <div className="min-h-screen text-white py-12 px-6 ">
             {/* Hero Section */}
             <section className="max-w-5xl mx-auto text-center mb-20 relative">
                 <div className="absolute inset-0 bg-green-500 opacity-5 rounded-3xl blur-3xl"></div>
